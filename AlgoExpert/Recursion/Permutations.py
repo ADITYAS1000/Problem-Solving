@@ -38,26 +38,3 @@
 # # find_perm([1,2,3], [], perms)
 # find_permutation(0, [1,2,3], perms)
 # print(perms)
-
-def reverseString(s):
-    """
-    :type s: List[str]
-    :rtype: None Do not return anything, modify s in-place instead.
-    """
-    if len(s) == 1:
-        return s[0]
-    return [s[-1]] + [reverseString(s[0:-1])]
-
-def reverseString2(s,l,r):
-    """
-    :type s: List[str]
-    :rtype: None Do not return anything, modify s in-place instead.
-    """
-    if l >= r:
-        return s
-    s[l],s[r] = s[r],s[l]
-    return reverseString2(s,l+1,r-1)
-
-op1 = []
-op = reverseString2(['h','e','l','l','o'],0,4)
-print(op)
