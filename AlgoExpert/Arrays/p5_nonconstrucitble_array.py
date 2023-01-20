@@ -1,11 +1,11 @@
-def non_constructible_array(nums):
-    nums.sort()
-    res = []
-    i, sum = 0, nums[0]
-    while( i + 1 < len(nums)):
-        if (nums[i + 1] > sum + 1):
-            return sum + 1
-        sum += (nums[i+1])
-        i += 1
+# O(n log n) | O(1)
+def nonConstructibleChange(coins):
+    changeCoin = 0
+    coins.sort()
+    for coin in coins:
+        if changeCoin + 1 < coin:
+            return changeCoin + 1
+        
+        changeCoin += coin
 
-print(non_constructible_array([5,7,1,1,2,3,22]))
+print(nonConstructibleChange([5,7,1,1,2,3,22]))

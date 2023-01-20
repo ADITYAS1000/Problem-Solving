@@ -23,6 +23,16 @@ def printLL(head):
         print(head.data)
         head = head.next
 
+def removeDup(head):
+    currentNode = head
+    while currentNode is not None:
+        nextDistinct = currentNode.next
+        while nextDistinct is not None and nextDistinct.data == currentNode.data:
+            nextDistinct = nextDistinct.next
+        currentNode.next = nextDistinct
+        currentNode = nextDistinct
+    return head
+
 # def removeDup(head):
 #     currentNode = head
 #     while currentNode.next != None:
@@ -32,16 +42,6 @@ def printLL(head):
 #         else:
 #             currentNode = currentNode.next
 #     return head
-
-def removeDup(head):
-    currentNode = head
-    while currentNode is not None:
-        nextDistinctNode = currentNode.next
-        while nextDistinctNode is not None and currentNode.data == nextDistinctNode.data:
-            nextDistinctNode = nextDistinctNode.next
-        currentNode.next = nextDistinctNode
-        currentNode = nextDistinctNode
-    return head
 
 head = removeDup(n1)
 printLL(head)

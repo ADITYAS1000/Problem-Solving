@@ -4,7 +4,6 @@ input = [-3,-1,2,3,6]  # Array of Sorted integers
 # print(input)
 output = []
 
-
 # T: O(n logn) | S: O(1)
 # def SortedArrays(input):
 #     for each in range(len(input)):
@@ -13,7 +12,6 @@ output = []
 #     return input
 
 # print(SortedArrays(input))
-
 
 # T: O(n) | S: O(n)
 def SortedArrays(input):
@@ -31,6 +29,6 @@ def SortedArrays(input):
         else:
             lst2[idx] = (smallerValue * smallerValue)
             smallerIndex += 1
-    return lst2
+    return lst2x 
 
 print(SortedArrays(input))
